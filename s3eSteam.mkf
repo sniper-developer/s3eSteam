@@ -1,0 +1,61 @@
+# Subproject file for extension s3eSteam.
+#
+# Include this subproject in your App to enable access to the s3eSteam API
+#
+# NOTE: This file was originally written by the extension builder, but will not
+# be overwritten (unless --force is specified) and is intended to be modified.
+
+#
+# Running the extension builder with --platform can cause additions to this file
+# even after modification, to support additional platforms
+
+display_name "Extensions/s3eSteam"
+
+includepath h
+includepath "upstream/public/steam"
+
+subproject steamworks_sdk_location
+
+files
+{
+    (h)
+    s3eSteam.h
+
+    ["interface"]
+    (interface)
+    s3eSteam_interface.cpp
+    s3eSteam.defines.txt
+
+    ["Steamworks"]
+    ("upstream/public/steam")
+    steamclientpublic.h
+}
+
+defines
+{
+    IW_TRACE_CHANNEL_STEAM_VERBOSE=2
+}
+
+if {{ not defined IW_MKF_IWCRT}}
+    subproject iwutil
+
+deployments
+{
+    win32-ext-dll="lib/win32/s3eSteam.dll"
+    osx-ext-dll="lib/osx/libs3eSteam.dylib"
+}
+    
+if {{ defined I3D_OS_WINDOWS}}
+{
+    assets
+    {
+        "upstream/redistributable_bin/steam_api.dll"
+        steam_appid.txt
+    }
+
+    postbuild 
+    { 
+        "xcopy /D upstream\\redistributable_bin\\steam_api.dll ..\\..\\build\\"
+        "xcopy /D steam_appid.txt ..\\..\\build\\"
+    }
+}

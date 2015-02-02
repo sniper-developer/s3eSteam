@@ -1,0 +1,14 @@
+#!/usr/bin/env mkb
+# Builder mkb file for the s3eSteam extension on osx
+platform OSX
+
+options
+{
+    dll
+    x86
+    output-name="lib/osx/libs3eSteam.dylib"
+    output-name-debug="lib/osx/libs3eSteam_d.dylib"
+}
+define S3E_BUILD_EXT
+
+subproject s3eSteam_build

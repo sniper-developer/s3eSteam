@@ -1,0 +1,5 @@
+upstream
+{
+    #url="https://partner.steamgames.com/downloads/steamworks_sdk_131.zip"
+    url="steamworks_sdk_131.zip"
+}

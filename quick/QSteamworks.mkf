@@ -1,0 +1,10 @@
+subprojects
+{
+    s3eSteam
+}
+
+files
+{
+    QSteamworks.h
+    QSteamworks.cpp
+}

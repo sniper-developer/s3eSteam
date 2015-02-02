@@ -1,0 +1,18 @@
+files
+{
+    quickuser_tolua.cpp
+    
+    ("__ext_path__/quick")
+    QSteamworks.h
+    QSteamworks.cpp
+}
+
+options
+{
+    module_path="__ext_path__/.."
+}
+
+subprojects
+{
+    s3eSteam
+}
