@@ -45,17 +45,14 @@ deployments
     osx-ext-dll="lib/osx/libs3eSteam.dylib"
 }
     
-if {{ defined I3D_OS_WINDOWS}}
+assets
 {
-    assets
-    {
-        "upstream/redistributable_bin/steam_api.dll"
-        steam_appid.txt
-    }
+    "upstream/redistributable_bin/steam_api.dll"
+    #steam_appid.txt
+}
 
-    postbuild 
-    { 
-        "xcopy /D upstream\\redistributable_bin\\steam_api.dll ..\\..\\build\\"
-        "xcopy /D steam_appid.txt ..\\..\\build\\"
-    }
+postbuild 
+{ 
+    "xcopy /D upstream\\redistributable_bin\\steam_api.dll ..\\..\\build\\"
+    "xcopy /D steam_appid.txt ..\\..\\build\\"
 }

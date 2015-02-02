@@ -25,7 +25,7 @@ Optional for Marmalade Quick (Windows):
 8. Run quickuser_tolua.bat, it will add QSteamworks.* files to build.
 Even more optional for Marmalade Quick:
 9. Make new Quick binaries by calling %S3E_DIR%\..\quick\quick_prebuilt.mkb
-
+10. s3eSteam.mkf has settings to copy required steam_api.dll file into build folder and into deployed build. Change it to correspond project folders. Also, this section won't work when building on MAC.
 
 ========================
 Code snippets (C++)
