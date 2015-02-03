@@ -1,5 +1,6 @@
 #s3eSteam
 ==============
+
 Updated: 02/02/15
 Marmalade version: 7.5.0
 Steamworks version: 1.31
@@ -28,11 +29,11 @@ Even more optional for Marmalade Quick:
 10. s3eSteam.mkf has settings to copy required steam_api.dll file into build folder and into deployed build. Change it to correspond project folders. Also, this section won't work when building on MAC.
 
 
-Code snippets (C++)
-(See full API in s3eSteam.s4e)
+Code snippets (C++)  (See full API in s3eSteam.s4e)
 --------------
 
-`#if defined(IW_MKF_S3ESTEAM) && (IW_MKF_S3ESTEAM != 0)
+```c++
+#if defined(IW_MKF_S3ESTEAM) && (IW_MKF_S3ESTEAM != 0)
 #include "s3eSteam.h"
 #include "steamclientpublic.h" // Used for EResult enum
 #endif // defined(IW_MKF_S3ESTEAM) && (IW_MKF_S3ESTEAM != 0)
@@ -132,14 +133,15 @@ int32 _SteamCbLeaderboardEntries(void* systemData, void* userData)
         s3eSteamUpdate();
     }
 
-#endif // defined(IW_MKF_S3ESTEAM) && (IW_MKF_S3ESTEAM != 0)`
+#endif // defined(IW_MKF_S3ESTEAM) && (IW_MKF_S3ESTEAM != 0)
+```
 
 
-
-Code snippets (Quick)
-(See full API in quick/QSteamworks.h)
+Code snippets (Quick)  (See full API in quick/QSteamworks.h)
 --------------
-`if steamworks.isAvailable() and steamworks.isStarted() then
+```lua
+if steamworks.isAvailable() and steamworks.isStarted() then
     steamworks.setAchievement("someid")
     lang = steamworks.getCurrentGameLanguage()
-end`
+end
+```
