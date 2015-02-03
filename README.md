@@ -1,19 +1,19 @@
 #s3eSteam
-========================
+==============
 Updated: 02/02/15
 Marmalade version: 7.5.0
 Steamworks version: 1.31
 Author: Dmitry "SnipER" Vladimirov.
-========================
+
 This is an extension for the Marmalade SDK to support Steamworks API for achievements, stats and leaderboards.
 Quick extension with base functionality (without callbacks) is also included.
 Steamworks SDK is not included, because is provided under Valve non-disclosure agreement.
 Not tested on MAC, however, code is literally the same(s3eSteam_platform.mm == s3eSteam_platform.cpp), so there should not be any problems.
 
 
-========================
+
 Setup for C++ and Quick
-========================
+--------------
 1. Copy extension to project root folder, or any folder specified in options module_path section of project's mkb file.
 2. Provide path to download steamworks SDK in steamworks_sdk_location.mkf (by default, searches for steamworks_sdk_131.zip in same folder).
 3. Change steam_appid.txt (currently is set to 480 - id of Steamworks SDK's steamworksexample). Before release, remove steam_appid.txt entry from s3eSteam.mkf.
@@ -27,12 +27,12 @@ Even more optional for Marmalade Quick:
 9. Make new Quick binaries by calling %S3E_DIR%\..\quick\quick_prebuilt.mkb
 10. s3eSteam.mkf has settings to copy required steam_api.dll file into build folder and into deployed build. Change it to correspond project folders. Also, this section won't work when building on MAC.
 
-========================
+
 Code snippets (C++)
 (See full API in s3eSteam.s4e)
-========================
+--------------
 
-#if defined(IW_MKF_S3ESTEAM) && (IW_MKF_S3ESTEAM != 0)
+`#if defined(IW_MKF_S3ESTEAM) && (IW_MKF_S3ESTEAM != 0)
 #include "s3eSteam.h"
 #include "steamclientpublic.h" // Used for EResult enum
 #endif // defined(IW_MKF_S3ESTEAM) && (IW_MKF_S3ESTEAM != 0)
@@ -132,14 +132,14 @@ int32 _SteamCbLeaderboardEntries(void* systemData, void* userData)
         s3eSteamUpdate();
     }
 
-#endif // defined(IW_MKF_S3ESTEAM) && (IW_MKF_S3ESTEAM != 0)
+#endif // defined(IW_MKF_S3ESTEAM) && (IW_MKF_S3ESTEAM != 0)`
 
 
-========================
+
 Code snippets (Quick)
 (See full API in quick/QSteamworks.h)
-========================
-if steamworks.isAvailable() and steamworks.isStarted() then
+--------------
+`if steamworks.isAvailable() and steamworks.isStarted() then
     steamworks.setAchievement("someid")
     lang = steamworks.getCurrentGameLanguage()
-end
+end`
