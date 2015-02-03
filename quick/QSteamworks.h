@@ -20,7 +20,7 @@ const char * getCurrentGameLanguage();
 
 // Achievements
 bool getAchievement(const char* pchName);
-bool getAchievement(const char* pchName);
+bool setAchievement(const char* pchName);
 bool clearAchievement(const char* pchName);
 
 // Stats

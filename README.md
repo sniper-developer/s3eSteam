@@ -95,7 +95,7 @@ int32 _SteamCbLeaderboardEntries(void* systemData, void* userData)
 
 //Init
     if (s3eSteamAvailable())
-    {	
+    {
         if (s3eSteamStart())
         {
             s3eSteamRegister(s3eSteamCallback_UserStatsReceived, _SteamCbUserStatsReceived, NULL);

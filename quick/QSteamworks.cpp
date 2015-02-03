@@ -26,7 +26,7 @@ bool setStatFloat(const char* pchName, float fData) { return s3eSteamSetStatFloa
 
 // Leaderboards
 bool leaderboardInit(const char* pchName) { return s3eSteamLeaderboardInit(pchName) == S3E_TRUE; }
-bool leaderboardUploadScore(const char* pchName, int32 value, bool forceUpdate) { return s3eSteamLeaderboardUploadScore(pchName, value, forceUpdate) == S3E_TRUE; }
+bool leaderboardUploadScore(const char* pchName, int32 value, bool forceUpdate) { return s3eSteamLeaderboardUploadScore(pchName, value, forceUpdate ? S3E_TRUE : S3E_FALSE) == S3E_TRUE; }
 int leaderboardGetEntryCount(const char* pchName) { return s3eSteamLeaderboardGetEntryCount(pchName); }
 bool leaderboardDownloadEntries(const char* pchName, s3eSteamELeaderboardDataRequest eLeaderboardData, int nRangeStart, int nRangeEnd) { return s3eSteamLeaderboardDownloadEntries(pchName, eLeaderboardData, nRangeStart, nRangeEnd) == S3E_TRUE; }
 
